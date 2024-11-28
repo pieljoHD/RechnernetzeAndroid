@@ -18,10 +18,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
@@ -82,89 +84,106 @@ fun QuestionScreen(questionStorage: QuestionStorage) {
         mutableFloatStateOf(0f)
     }
 
+    LaunchedEffect(Unit) {
+        questionList.forEach { it.options.shuffled() }
+    }
+
     currentProgress.floatValue = currentQuestionCount.intValue.toFloat().div(questionList.size)
     val progressAnimated: Float by animateFloatAsState(currentProgress.floatValue, label = "")
 
-    Column {
-        Spacer(modifier = Modifier.height(50.dp))
-        LinearProgressIndicator(
-            modifier = Modifier
-                .padding(horizontal = 12.dp)
-                .fillMaxWidth()
-                .height(12.dp),
-            progress = progressAnimated,
-            color = LightDarkGreen,
-            strokeCap = StrokeCap.Round
-        )
-        Column(
-            modifier = Modifier.fillMaxSize(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
-        ) {
-            Text(
-                text = questionList[currentQuestionCount.intValue].question,
-                textAlign = TextAlign.Center,
-                fontSize = 22.sp
-            )
-            Spacer(modifier = Modifier.height(12.dp))
-            QuestionComponent(
-                question = questionList[currentQuestionCount.intValue],
-                currentInputs = currentSelection.value,
-                onValueChanged = {
-                    currentSelection.value = it
-                },
-                validate = validateState.value
-            )
-            Spacer(modifier = Modifier.height(6.dp))
-            Row {
-                Box(
-                    contentAlignment = Alignment.Center,
-                    modifier = Modifier
-                        .padding(horizontal = 32.dp)
-                        .border(
-                            1.dp,
-                            if (currentSelection.value.isNotEmpty()) DarkGreen else VeryLigthGrey,
-                            RoundedCornerShape(50)
-                        )
-                        .fillMaxWidth()
-                        .clip(RoundedCornerShape(50))
-                        .clickable {
-                            if (buttonState.value == ButtonState.CHECK) {
-                                validateState.value = true
-                                buttonState.value = ButtonState.NEXT
-                                if (
-                                    isOptionListValid(
-                                        questionList[currentQuestionCount.intValue].options.filter { it.isCorrect },
-                                        currentSelection.value
-                                    )
-                                ) {
-                                    val timings: LongArray = longArrayOf(100)
-                                    val amplitudes: IntArray = intArrayOf(200)
-                                    val repeatIndex = -1
-                                    vibrator.vibrate(VibrationEffect.createWaveform(timings, amplitudes, repeatIndex))
-                                } else {
-                                    val timings: LongArray = longArrayOf(200, 150,200)
-                                    val amplitudes: IntArray = intArrayOf(200, 0, 150)
-                                    val repeatIndex = -1
-                                    vibrator.vibrate(VibrationEffect.createWaveform(timings, amplitudes, repeatIndex))
-                                }
+    LazyColumn {
+        item {
+            Spacer(modifier = Modifier.height(50.dp))
+        }
 
-                            } else {
-                                validateState.value = false
-                                currentQuestionCount.intValue++
-                                buttonState.value = ButtonState.CHECK
-                                currentSelection.value = listOf()
+        item {
+            LinearProgressIndicator(
+                modifier = Modifier
+                    .padding(horizontal = 12.dp)
+                    .fillMaxWidth()
+                    .height(12.dp),
+                progress = progressAnimated,
+                color = LightDarkGreen,
+                strokeCap = StrokeCap.Round
+            )
+        }
+
+        item {
+            Spacer(modifier = Modifier.height(18.dp))
+        }
+
+        item {
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+                Text(
+                    text = questionList[currentQuestionCount.intValue].question,
+                    textAlign = TextAlign.Center,
+                    fontSize = 22.sp
+                )
+                Spacer(modifier = Modifier.height(12.dp))
+                QuestionComponent(
+                    question = questionList[currentQuestionCount.intValue],
+                    currentInputs = currentSelection.value,
+                    onValueChanged = {
+                        currentSelection.value = it
+                    },
+                    validate = validateState.value
+                )
+                Spacer(modifier = Modifier.height(6.dp))
+                Row {
+                    Box(
+                        contentAlignment = Alignment.Center,
+                        modifier = Modifier
+                            .padding(horizontal = 32.dp)
+                            .border(
+                                1.dp,
+                                if (currentSelection.value.isNotEmpty()) DarkGreen else VeryLigthGrey,
+                                RoundedCornerShape(50)
+                            )
+                            .fillMaxWidth()
+                            .clip(RoundedCornerShape(50))
+                            .clickable {
+                                if (buttonState.value == ButtonState.CHECK) {
+                                    validateState.value = true
+                                    buttonState.value = ButtonState.NEXT
+                                    if (
+                                        isOptionListValid(
+                                            questionList[currentQuestionCount.intValue].options.filter { it.isCorrect },
+                                            currentSelection.value
+                                        )
+                                    ) {
+                                        val timings: LongArray = longArrayOf(100)
+                                        val amplitudes: IntArray = intArrayOf(200)
+                                        val repeatIndex = -1
+                                        vibrator.vibrate(VibrationEffect.createWaveform(timings, amplitudes, repeatIndex))
+                                    } else {
+                                        val timings: LongArray = longArrayOf(200, 150,200)
+                                        val amplitudes: IntArray = intArrayOf(200, 0, 150)
+                                        val repeatIndex = -1
+                                        vibrator.vibrate(VibrationEffect.createWaveform(timings, amplitudes, repeatIndex))
+                                    }
+
+                                } else {
+                                    validateState.value = false
+                                    currentQuestionCount.intValue++
+                                    buttonState.value = ButtonState.CHECK
+                                    currentSelection.value = listOf()
+                                }
                             }
-                        }
-                        .background(buttonState.value.fillColor)
-                        .padding(vertical = 10.dp)
-                ) {
-                    Text(
-                        text = buttonState.value.text,
-                        fontSize = 18.sp,
-                        color = if (currentSelection.value.isNotEmpty()) DarkGreen else Color.LightGray
-                    )
+                            .background(buttonState.value.fillColor)
+                            .padding(vertical = 10.dp)
+                    ) {
+                        Text(
+                            text = buttonState.value.text,
+                            fontSize = 18.sp,
+                            color = if (currentSelection.value.isNotEmpty()) DarkGreen else Color.LightGray
+                        )
+                    }
                 }
+                Spacer(modifier = Modifier.height(8.dp))
             }
         }
     }

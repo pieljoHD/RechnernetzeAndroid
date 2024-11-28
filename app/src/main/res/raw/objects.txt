@@ -1,0 +1,48 @@
+[
+    {
+        "question":"Sie wollen ein Benutzerkonto für Andrea Bayer von der Kommandozeile aus erstellen. Das Konto soll Mitglied der Techniker-Gruppe im Mannheim-Container sein. Es soll nach der Erstellung deativiert sein, sein Kennwort soll Sicherheit lauten und es soll sich im Container ou=Benutzer,ou=Mannheim,dc=beispiel,dc=local befinden. Welche der folgenden Tools bzw Kombination von Tools können dies bewerkstelligen?",
+        "options":[
+            {
+                "answer":"Net User,gefolgt von dsmove",
+                "isCorrect":false
+            },
+            {
+                "answer":"ldifde, gefolgt von dsmod",
+                "isCorrect":true
+            },
+            {
+                "answer":"dsadd",
+                "isCorrect":true
+            },
+            {
+                "answer":"csvde,gefolgt von dsmove",
+                "isCorrect":false
+            },
+            {
+                "answer":"dsquery,gefolgt von dsmod",
+                "isCorrect":false
+            }
+        ]
+    },
+    {
+        "question":"Ein Vorgesetzter sagt Ihnen, dass  einer seiner Mitarbeiter zu einer Konkurenzfirma gewechselt hat. Er will sichergehen, dass der Mitarbeiter keinen Zugriff mehr auf seinen Computer oder die Dateien auf dem Dateiserver hat. Was wäre das beste Vorgehen?",
+        "options":[
+            {
+                "answer":"Benutzkonto löschen",
+                "isCorrect":false
+            },
+            {
+                "answer":"Benutzerkonto in Ehemaliger Mitarbeiter umbennenen",
+                "isCorrect":false
+            },
+            {
+                "answer":"Option Konto ist deaktiviert auswählen",
+                "isCorrect":true
+            },
+            {
+                "answer":"Wert im Feld Konto läuft ab abändern",
+                "isCorrect":false
+            }
+        ]
+    }
+]

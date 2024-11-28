@@ -76,6 +76,10 @@ fun QuestionScreen(questionStorage: QuestionStorage) {
         mutableIntStateOf(0)
     }
 
+    val currentOptions = remember {
+        mutableStateOf(questionList[currentQuestionCount.intValue].options.shuffled())
+    }
+
     val validateState = remember {
         mutableStateOf(false)
     }
@@ -85,7 +89,7 @@ fun QuestionScreen(questionStorage: QuestionStorage) {
     }
 
     LaunchedEffect(Unit) {
-        questionList.forEach { it.options.shuffled() }
+
     }
 
     currentProgress.floatValue = currentQuestionCount.intValue.toFloat().div(questionList.size)
@@ -125,7 +129,7 @@ fun QuestionScreen(questionStorage: QuestionStorage) {
                 )
                 Spacer(modifier = Modifier.height(12.dp))
                 QuestionComponent(
-                    question = questionList[currentQuestionCount.intValue],
+                    options = currentOptions.value,
                     currentInputs = currentSelection.value,
                     onValueChanged = {
                         currentSelection.value = it
@@ -171,6 +175,7 @@ fun QuestionScreen(questionStorage: QuestionStorage) {
                                     currentQuestionCount.intValue++
                                     buttonState.value = ButtonState.CHECK
                                     currentSelection.value = listOf()
+                                    currentOptions.value =  questionList[currentQuestionCount.intValue].options.shuffled()
                                 }
                             }
                             .background(buttonState.value.fillColor)

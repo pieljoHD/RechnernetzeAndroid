@@ -32,7 +32,7 @@ import com.example.rechnernetzefragen.ui.theme.LightGreen
 
 @Composable
 fun QuestionComponent(
-    question: Question,
+    options: List<Option>,
     currentInputs: List<String>,
     onValueChanged: (List<String>) -> Unit,
     validate: Boolean
@@ -40,7 +40,7 @@ fun QuestionComponent(
     val context = LocalContext.current
     val vibrator = context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
     Column {
-        question.options.forEach { option ->
+        options.forEach { option ->
             val isChosen = currentInputs.contains(option.answer)
             val questionBackgroundColor =
                 if (validate) {
@@ -97,7 +97,7 @@ fun QuestionComponent(
 @Preview
 fun RadioButtonPreview() {
     QuestionComponent(
-        Question("this is the Question", listOf(Option("1", false), Option("2", true))),
+        listOf(Option("1", false), Option("2", true)),
         currentInputs = listOf("2"),
         onValueChanged = {},
         validate = true

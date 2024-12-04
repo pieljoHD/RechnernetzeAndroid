@@ -118,7 +118,7 @@ class QuestionStorage {
                 ),
                 Option(
                     answer = "Sie hat sich am falschen Computer angemeldet",
-                    true
+                    false
                 ),
                 Option(
                     answer = "Sie hat sich lokal angemeldet",
@@ -126,7 +126,7 @@ class QuestionStorage {
                 ),
                 Option(
                     answer = "Ihr wurde ein verbindliches Profil zugewiesen",
-                    false
+                    true
                 )
             )
         ),

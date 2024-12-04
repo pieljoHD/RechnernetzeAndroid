@@ -839,6 +839,189 @@ class QuestionStorage {
                     false
                 )
             )
+        ),
+        Question(
+            question = "Which of the following are default hidden shares under Windows Server 2003? (Choose three.)",
+            options = listOf(
+                Option(
+                    answer = "SYSVOL",
+                    false
+                ),
+                Option(
+                    answer = "ADMIN\$",
+                    true
+                ),
+                Option(
+                    answer = "CD\$",
+                    false
+                ),
+                Option(
+                    answer = "PRINTER\$",
+                    false
+                ),
+                Option(
+                    answer = "IPC\$",
+                    true
+                ),
+                Option(
+                    answer = "C\$",
+                    true
+                )
+            )
+        ),
+        Question(
+            question = "What does the Shared Folders snap-in provide in terms of setting permissions for a new share that the Sharing tab of a foler's properties sheet does not offer?",
+            options = listOf(
+                Option(
+                    answer = "Setting share permissions",
+                    false
+                ),
+                Option(
+                    answer = "Publishing the share in active Directory",
+                    false
+                ),
+                Option(
+                    answer = "Specifying offline settings",
+                    false
+                ),
+                Option(
+                    answer = "Specifying both share permissions and NTFS permissions",
+                    true
+                ),
+                Option(
+                    answer = "Specifying Web Sharing access permission",
+                    false
+                )
+            )
+        ),
+        Question(
+            question = "When both share permissions and NIFS permissions exist on the same shared folder, how is access control to the shared folder affected for users trying to access the files stored in the shared folder over the network?",
+            options = listOf(
+                Option(
+                    answer = "NTFS permissions take precedence.",
+                    false
+                ),
+                Option(
+                    answer = "Share permissions take precedence.",
+                    false
+                ),
+                Option(
+                    answer = "The most liberal permissions take precedence.",
+                    false
+                ),
+                Option(
+                    answer = "The most restrictive permissions take precedence.",
+                    true
+                )
+            )
+        ),
+        Question(
+            question = "Which of the following characteristics apply to NTFS inherited permissions? (Choose three.)",
+            options = listOf(
+                Option(
+                    answer = "Special permissions are inherited by default.",
+                    true
+                ),
+                Option(
+                    answer = "Basic permissions are inherited by default.",
+                    true
+                ),
+                Option(
+                    answer = "Explicit permissions are the same as inherited permissions.",
+                    false
+                ),
+                Option(
+                    answer = "NTFS permissions are inherited by default.",
+                    true
+                ),
+                Option(
+                    answer = "NTFS explicit permissions are not inherited by default.",
+                    false
+                ),
+                Option(
+                    answer = "You cannot set explicit permissions on files.",
+                    false
+                )
+            )
+        ),
+        Question(
+            question = "The basic NTFS permission, Modify, when set or a folder, consists of which of the following special permissions? (Choose three.)",
+            options = listOf(
+                Option(
+                    answer = "List Folder/Read Data",
+                    true
+                ),
+                Option(
+                    answer = "Create Files/Write Data",
+                    true
+                ),
+                Option(
+                    answer = "Change Permissions",
+                    false
+                ),
+                Option(
+                    answer = "Delete Subfolders and Files",
+                    false
+                ),
+                Option(
+                    answer = "Take Ownership",
+                    false
+                ),
+                Option(
+                    answer = "Write Extended Attributes",
+                    true
+                )
+            )
+        ),
+        Question(
+            question = "When you view NTFS effective permissions for a user or a group, which of the following permissions are displayed?",
+            options = listOf(
+                Option(
+                    answer = "Basic permissions",
+                    false
+                ),
+                Option(
+                    answer = "Special permissions",
+                    true
+                ),
+                Option(
+                    answer = "Share permissions",
+                    false
+                ),
+                Option(
+                    answer = "Not inherited permissions",
+                    false
+                )
+            )
+        ),
+        Question(
+            question = "In which of the following ways can ownership of an NTFS file or folder change? (Choose three.)",
+            options = listOf(
+                Option(
+                    answer = "Any user who is a member of the Domain Users group can take ownership of any folder or file whether or not she has permissions to the folder or file.",
+                    false
+                ),
+                Option(
+                    answer = "The current owner of a file or folder can assign the Take Ownership permission to another user for the file or folder; the other user must then take ownership of the object.",
+                    true
+                ),
+                Option(
+                    answer = "A member of the Administrators group can assign ownership of a file or folder to another user.",
+                    true
+                ),
+                Option(
+                    answer = "Any user who is granted the Restore Files and Directories user right can assign ownership of a file or folder to another user.",
+                    true
+                ),
+                Option(
+                    answer = "Any member of the Backup Operators group can take ownership of any file or folder at any time.",
+                    false
+                ),
+                Option(
+                    answer = "Any member of the Authenticated Users group can assign ownership of files or folders to another user at any time.",
+                    false
+                )
+            )
         )
     )
 }

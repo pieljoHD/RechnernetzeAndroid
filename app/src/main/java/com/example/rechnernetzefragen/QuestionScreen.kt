@@ -141,7 +141,7 @@ fun QuestionScreen(questionStorage: QuestionStorage) {
                     Box(
                         contentAlignment = Alignment.Center,
                         modifier = Modifier
-                            .padding(horizontal = 32.dp)
+                            .padding(start = 32.dp, end = 32.dp, bottom = 40.dp)
                             .border(
                                 1.dp,
                                 if (currentSelection.value.isNotEmpty()) DarkGreen else VeryLigthGrey,

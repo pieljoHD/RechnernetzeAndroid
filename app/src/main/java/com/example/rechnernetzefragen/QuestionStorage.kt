@@ -774,7 +774,7 @@ class QuestionStorage {
                 ),
                 Option(
                     answer = "Windows 2000 native",
-                    false
+                    true
                 ),
                 Option(
                     answer = "Windows Server 2003 mixed",

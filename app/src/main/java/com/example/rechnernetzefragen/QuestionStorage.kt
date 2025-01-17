@@ -10,7 +10,8 @@ data class Question(
     val question: String,
     val options: List<Option>
 )
-
+//Ausgelassene Fragen
+//Resourcenzugriff Folie:29,30,31,32,34,36,37
 class QuestionStorage {
     val questionList: List<Question> = listOf(
         Question(
@@ -1021,6 +1022,450 @@ class QuestionStorage {
                     answer = "Any member of the Authenticated Users group can assign ownership of files or folders to another user at any time.",
                     false
                 )
+            )
+        ),
+        Question(
+            question = "You have an APPl folder on a Windows Server 2003 computer. Userl belongs to Groupl and Group2. Userl has no NTFS permissions assigned. Groupl has Allow Read NTES permission, and Group2 has Allow Modify NTFS permission. What permission does Userl have for the APP1 folder?",
+            options = listOf(
+                Option(
+                    answer = "Allow Full Control NTFS permission",
+                    false
+                ),
+                Option(
+                    answer = "Allow Modify NTFS permission",
+                    true
+                ),
+                Option(
+                    answer = "Allow Read NTFS permission",
+                    false
+                ),
+                Option(
+                    answer = "No access NTFS permission",
+                    false
+                ),
+            )
+        ),
+        Question(
+            question = "You have an APP1 folder on a Windows Server 2003 computer. Userl belongs to Groupl and Group2. Userl has Allow Full Control NTES permission, and Group2 has Allow Modify NTES permission. Groupl has Deny Full Control NTFS permission. What permission does Userl have for the APP1 folder?",
+            options = listOf(
+                Option(
+                    answer = "Allow Full Control",
+                    false
+                ),
+                Option(
+                    answer = "Allow Modify",
+                    false
+                ),
+                Option(
+                    answer = "Allow Read",
+                    false
+                ),
+                Option(
+                    answer = "No access",
+                    true
+                ),
+            )
+        ),
+        Question(
+            question = "On a Windows Server 2003 computer, you have a shared folder called DATA1. You apply the default share permissions and NTFS permissions to DATA1. You then create a folder called DATA2 in DATAl. You apply the default NTFS permissions to DATA2. When GROUP1 tries to add files to DATA2, they get an \"Access is denied\" ertor message. What do you need to do so that GROUP1 can create, modify, and delete files in DATA1 and DATA2? All other users must be able to read the files in DATAl and DATA2.",
+            options = listOf(
+                Option(
+                    answer = "For the DATA1 folder, assign the Change share permission to the Everyone group. For the DATA2 folder, assign the Allow Write NTFS permission for GROUP1 group.",
+                    false
+                ),
+                Option(
+                    answer = "For the DATA1 folder, assign the Change share permission to the GROUP1 group and assign the Allow Write NTFS permissions to the GROUP1 group.",
+                    false
+                ),
+                Option(
+                    answer = "For the DATAl folder, assign the Change share permissions to the Everyone group and assign the Allow Modify NTFS permissions to the GROUP1 group.",
+                    false
+                ),
+                Option(
+                    answer = "For the DATAl folder, assign the Change share permissions to the GROUP1 and assign the Allow Modify NTFS permissions to the GROUP1 group.",
+                    true
+                ),
+            )
+        ),
+        Question(
+            question = "On a Windows Server 2003 computer, you have a shared folder called APP1. At this time. Joe does not belong to the Sales, Marketing, or Executive group. You set the NTFS and APP1 as shown in the following table: HERE SHOULD BE A TABLE (lern die Frage einfach auswendig) \n You want Joe to be able to make changes to the files in the APPI folder. What should you do?",
+            options = listOf(
+                Option(
+                    answer = "Assign Joe to the Sales group and assign Allow Write NTFS permission to the Sales group.",
+                    true
+                ),
+                Option(
+                    answer = "Assign Joe to the Executive group and assign the Allow Write NTFS permission to the Executive group.",
+                    false
+                ),
+                Option(
+                    answer = "Assign Joe to the Executive group and assign the Change share permission to the Executive group.",
+                    false
+                ),
+                Option(
+                    answer = "Assign the Full Control share permission to Everyone.",
+                    false
+                ),
+            )
+        ),
+        Question(
+            question = "Im Rahmen einer Konsolidierungsmaßnahme verschieben Sie eine Reihe freigegebener Ordner auf einen neuen 2003-Server. Nachdem Sie die Ordner samt Dateien per xcopy verschoben haben, nehmen Sie den Server in Produktionsbetrieb. Und schon klingelt Ihr Telefon und Benutzer beschweren sich, dass sie die Freigaben nicht sehen können. Wie beheben Sie dieses Problem?",
+            options = listOf(
+                Option(
+                    answer = "Sie müssen die NTFS-Berechtigungen umkonfigurieren.",
+                    true
+                ),
+                Option(
+                    answer = "Sie müssen die Freigabeberechtigungen umkonfigurieren.",
+                    true
+                ),
+                Option(
+                    answer = "Sie müssen den Dienst Server auf dem neuen Server neu starten.",
+                    false
+                ),
+                Option(
+                    answer = "Sie müssen die Freigaben erneut freigeben.",
+                    true
+                ),
+                Option(
+                    answer = "Sie müssen den Freigaben eindeutige Namen geben.",
+                    false
+                )
+            )
+        ),
+        Question(
+            question = "Die Assistentin des Geschäftsführers kündigt fristlos. In den persönlichen Ordnern der Assistentin gibt es mehrere Dateien, auf die der Geschäftsführer zugreifen muss. Die Ordner haben die folgende Berechtigung:\n" +
+                    "AssistentinGeschf: Vollzugriff\n" +
+                    "Alle ihre Ordner befinden sich auf einem Server, der mit NTFS formatiert ist. Wie geben Sie dem Geschäftsführer am schnellsten Zugriff auf diese Dateien?",
+            options = listOf(
+                Option(
+                    answer = "Setzen Sie das Kennwort der Assistentin zurück. Geben Sie dem Geschäftsführer die Benutzerkennung und das neue Kennwort.",
+                    false
+                ),
+                Option(
+                    answer = "Übertragen Sie die Besitzrechte der Ordner an den Geschäftsführer.",
+                    true
+                ),
+                Option(
+                    answer = "Übernehmen Sie die Besitzrechte der Ordner und geben Sie dem Geschäftsführer Vollzugriff.",
+                    false
+                ),
+                Option(
+                    answer = "Verschieben Sie die Dateien in die Ordner des Geschäftsführers.",
+                    false
+                ),
+            )
+        ),
+        Question(
+            question = "Der Ordner Verträge hat die folgenden Berechtigungen:\n" +
+                    "Freigabeberechtigungen:\n" +
+                    "Geschäftsführung: Vollzugriff\n" +
+                    "Rechtsabteilung: Ändern\n" +
+                    "Personalabteilung: Lesen\n" +
+                    "NTFS-Berechtigungen:\n" +
+                    "Geschäftsführung: Vollzugriff\n" +
+                    "Rechtsabteilung: Ändern\n" +
+                    "Personalabteilung: Lesen\n" +
+                    "Angenommen, Bernd ist Mitglied der Rechtsabteilung und der Personalabteilung. Wie lautet dann seine effektive Berechtigung über das Netzwerk?",
+            options = listOf(
+                Option(
+                    answer = "Ändern (Freigabeberechtigung)",
+                    true
+                ),
+                Option(
+                    answer = "Ändern (NTFS-Berechtigung)",
+                    false
+                ),
+                Option(
+                    answer = "Lesen",
+                    false
+                ),
+                Option(
+                    answer = "Vollzugriff",
+                    false
+                ),
+            )
+        ),
+        //-----------GRUPPENRICHTLINIEN-------------------
+        Question(
+            question = "GPOs cannot be linked to which of the following?",
+            options = listOf(
+                Option(
+                    answer = "Site",
+                    false
+                ),
+                Option(
+                    answer = "Domain",
+                    false
+                ),
+                Option(
+                    answer = "First Level Organizational units",
+                    false
+                ),
+                Option(
+                    answer = "Second Level Organizational Units",
+                    false
+                ),
+                Option(
+                    answer = "Groups",
+                    true
+                )
+            )
+        ) ,
+        Question(
+            question = "When you want to make sure that a domain GPO is not overwritten by an organizational unit GPO, what should you do?",
+            options = listOf(
+                Option(
+                    answer = "Make sure that the organizational unit GPO is listed before the domain GPO",
+                    false
+                ),
+                Option(
+                    answer = "Make sure to disable the organizational unit",
+                    false
+                ),
+                Option(
+                    answer = "Make sure that the No Override option is selected for the domain GPO",
+                    true
+                ),
+                Option(
+                    answer = "Enable block inheritance at the organizational unit",
+                    false
+                ),
+            )
+        ) ,
+        Question(
+            question = "What permissions must a user have for a GPO to be linked? (Choose two.)",
+            options = listOf(
+                Option(
+                    answer = "Read",
+                    true
+                ),
+                Option(
+                    answer = "Write",
+                    false
+                ),
+                Option(
+                    answer = "Apply group policy",
+                    true
+                ),
+                Option(
+                    answer = "Administrative",
+                    false
+                ),
+            )
+        ) ,
+        Question(
+            question = "If you do not want one user to be affected by a group policy, what can you do?",
+            options = listOf(
+                Option(
+                    answer = "Create a new GPO that is assigned to the one user.",
+                    false
+                ),
+                Option(
+                    answer = "Modify the GPO group policy.",
+                    false
+                ),
+                Option(
+                    answer = "Add the user to the administrators group.",
+                    false
+                ),
+                Option(
+                    answer = "Modify the GPO permissions so that the user is denied the Apply Group Policy permission to the GPO.",
+                    true
+                ),
+            )
+        ) ,
+        Question(
+            question = "Which of the following can be affected by Group Policies?",
+            options = listOf(
+                Option(
+                    answer = "Windows Me",
+                    false
+                ),
+                Option(
+                    answer = "Windows NT",
+                    false
+                ),
+                Option(
+                    answer = "Windows XP",
+                    true
+                ),
+                Option(
+                    answer = "Windows 98",
+                    false
+                ),
+            )
+        ) ,
+        Question(
+            question = "By default, if a group policy is in conflict with another group policy, what happens?",
+            options = listOf(
+                Option(
+                    answer = "The first group policy stays in effect.",
+                    false
+                ),
+                Option(
+                    answer = "The second GPO overwrites any settings from the first group policy.",
+                    true
+                ),
+                Option(
+                    answer = "If the user is an administrator, the first group policy stays in effect.",
+                    false
+                ),
+                Option(
+                    answer = "The domain level group policy stays in effect.",
+                    false
+                ),
+            )
+        ) ,
+        Question(
+            question = "When you set up a group policy to restrict what software can run on a computer, which of the following is not a parameter that can be used to identify the software?",
+            options = listOf(
+                Option(
+                    answer = "Name and date of the executable",
+                    true
+                ),
+                Option(
+                    answer = "Path of where the file is located",
+                    false
+                ),
+                Option(
+                    answer = "A digital certificate",
+                    false
+                ),
+                Option(
+                    answer = "A hash value",
+                    false
+                ),
+                Option(
+                    answer = "A hash value",
+                    false
+                ),
+            )
+        ) ,
+        Question(
+            question = "If you need to make a folder redirection based on groups, what do you have to do?",
+            options = listOf(
+                Option(
+                    answer = "Configure basic redirection using group policy.",
+                    false
+                ),
+                Option(
+                    answer = "Configure advanced redirection using group policy.",
+                    true
+                ),
+                Option(
+                    answer = "Configure basic redirection using user's profile.",
+                    false
+                ),
+                Option(
+                    answer = "Configure advanced redirection using user's profile.",
+                    false
+                ),
+            )
+        ) ,
+        Question(
+            question = "You want to change the wallpaper to one that includes a company logo. What do you do?",
+            options = listOf(
+                Option(
+                    answer = "Configure an administrative template using group policy.",
+                    true
+                ),
+                Option(
+                    answer = "Configure an administrative template using the Registry import function.",
+                    false
+                ),
+                Option(
+                    answer = "Create a login script that copies the logo onto the Registry.",
+                    false
+                ),
+                Option(
+                    answer = "Modify the Boot.ini file to point to the new company logo.",
+                    false
+                ),
+            )
+        ) ,
+        Question(
+            question = "If you make a change to the group policy and you want the group policy to go into effect immediately, what do you have to do on a Windows Server 2003?",
+            options = listOf(
+                Option(
+                    answer = "gpresult /Force",
+                    false
+                ),
+                Option(
+                    answer = "secedit /Update",
+                    false
+                ),
+                Option(
+                    answer = "gpupdate /Force",
+                    false
+                ),
+                Option(
+                    answer = "gpupdate / Sync",
+                    true
+                ),
+            )
+        ) ,
+        Question(
+            question = "If you want to see all group policies so that you can figure out where certain settings have come into play, what can you do?",
+            options = listOf(
+                Option(
+                    answer = "gpshow",
+                    false
+                ),
+                Option(
+                    answer = "secedit /show",
+                    false
+                ),
+                Option(
+                    answer = "gpresult",
+                    true
+                ),
+                Option(
+                    answer = "gpdupate /showall",
+                    false
+                ),
+            )
+        ),
+        Question(
+            question = "Which folder is replicated between domain controllers?",
+            options = listOf(
+                Option(
+                    answer = "Windows",
+                    false
+                ),
+                Option(
+                    answer = "Windows\\System32",
+                    false
+                ),
+                Option(
+                    answer = "Windows\\System",
+                    false
+                ),
+                Option(
+                    answer = "SYSVOL",
+                    true
+                ),
+            )
+        ),
+        Question(
+            question = "Where in the group policy settings would you configure computer startup and shutdown scripts?",
+            options = listOf(
+                Option(
+                    answer = "Client configuration",
+                    false
+                ),
+                Option(
+                    answer = "User configuration",
+                    false
+                ),
+                Option(
+                    answer = "Startup configuration",
+                    false
+                ),
+                Option(
+                    answer = "computer configuration",
+                    true
+                ),
             )
         )
     )

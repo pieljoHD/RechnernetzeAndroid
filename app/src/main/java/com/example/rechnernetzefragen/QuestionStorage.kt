@@ -1337,7 +1337,7 @@ class QuestionStorage {
                     false
                 ),
                 Option(
-                    answer = "A hash value",
+                    answer = "A zone defined within Internet Explorer",
                     false
                 ),
             )

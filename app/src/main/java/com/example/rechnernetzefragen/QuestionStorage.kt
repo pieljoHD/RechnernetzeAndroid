@@ -1397,11 +1397,11 @@ class QuestionStorage {
                 ),
                 Option(
                     answer = "gpupdate /Force",
-                    false
+                    true
                 ),
                 Option(
                     answer = "gpupdate / Sync",
-                    true
+                    false
                 ),
             )
         ) ,

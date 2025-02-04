@@ -1588,7 +1588,7 @@ class QuestionStorage {
                 Option(
                     answer = "Die vorgeschlagene Lösung bewirkt das zu erzielende Ergebnis und eines der beiden\n" +
                             "wünschenswerten Ergebnisse.",
-                    false
+                    true
                 ),
                 Option(
                     answer = "Die vorgeschlagene Lösung bewirkt das zu erzielende Ergebnis und beide wünschenswerten Ergebnisse.",
@@ -1610,7 +1610,7 @@ class QuestionStorage {
                 Option(
                     answer = "Die vorgeschlagene Lösung bewirkt das zu erzielende Ergebnis und eines der beiden\n" +
                             "wünschenswerten Ergebnisse.",
-                    false
+                    true
                 ),
                 Option(
                     answer = "Die vorgeschlagene Lösung bewirkt das zu erzielende Ergebnis und beide wünschenswerten Ergebnisse.",

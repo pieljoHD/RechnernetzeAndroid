@@ -11,7 +11,7 @@ data class Question(
     val options: List<Option>
 )
 //Ausgelassene Fragen
-//Resourcenzugriff Folie:29,30,31,32,34,36,37
+//Resourcenzugriff Folie: 34,36,37
 class QuestionStorage {
     val questionList: List<Question> = listOf(
         Question(
@@ -1465,6 +1465,160 @@ class QuestionStorage {
                 Option(
                     answer = "computer configuration",
                     true
+                ),
+            )
+        )
+
+        //--------------------------------
+
+        ,
+        Question(
+            question = "1. Sie sind Administrator eines 2003-Servers namens Serverl. Sie erstellen eine Freigabe namens Frei. Sie erzeugen einen Ordner Dokumente in Frei. Die Freigabe- und NTFS-Berechti-gungen von Frei und Dokumente sind wie folgt: \n Ziel: Maria soll alle Dateien im Ordner Dokumente ändern und löschen können. \n Lösung: Geben Sie Maria bei den NTFS-Berechtigungen des Ordners Dokumente und aller Unterord-ner Vollzugriff.",
+            options = listOf(
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt das zu erzielende Ergebnis, aber keines der beiden wünschenswerten Ergebnisse.",
+                    false
+                ),
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt das zu erzielende Ergebnis und eines der beiden wünschenswerten Ergebnisse.",
+                    true
+                ),
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt das zu erzielende Ergebnis und beide wünschenswerten Ergebnisse.",
+                    false
+                ),
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt nicht das zu erzielende Ergebnis.",
+                    false
+                ),
+            )
+        ) ,
+        Question(
+            question = "Sie sind Administrator eines Windows Server 2003-Computers namens Server 1. Sie erstellen eine Freigabe namens Frei. Sie erzeugen einen Ordner Dokumente in Frei. Die Freigabe-und NTFS-Berechtigungen von Frei und Dokumente sind wie folgt: \n Jeder:Lesen \n Ziel: Maria soll alle Dateien im Ordner Dokumente ändern und löschen können. \n Lösung: Geben Sie Maria bei den Berechtigungen des Ordners Dokumente die Berechtigung Ändern.",
+            options = listOf(
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt das zu erzielende Ergebnis, aber keines der beiden wünschenswerten Ergebnisse.",
+                    false
+                ),
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt das zu erzielende Ergebnis und eines der beiden wünschenswerten Ergebnisse.",
+                    false
+                ),
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt das zu erzielende Ergebnis und beide wünschenswerten Ergebnisse.",
+                    true
+                ),
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt nicht das zu erzielende Ergebnis.",
+                    false
+                ),
+            )
+        ) ,
+        Question(
+            question = "Sie sind Administrator eines Windows Server 2003-Computers namens Server 1. Sie erstellen eine Freigabe namens Frei. Sie erzeugen einen Ordner Dokumente in Frei. Die Freigabe-und NTFS-Berechtigungen von Frei und Dokumente sind wie folgt: \n Jeder:Vollzugriff Verweigern \n Ziel: Maria soll alle Dateien im Ordner Dokumente ändern und löschen können. \n Lösung: Geben Sie Maria bei den Berechtigungen des Ordners Dokumente die Berechtigung Ändern.",
+            options = listOf(
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt das zu erzielende Ergebnis, aber keines der beiden wünschenswerten Ergebnisse.",
+                    false
+                ),
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt das zu erzielende Ergebnis und eines der beiden wünschenswerten Ergebnisse.",
+                    false
+                ),
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt das zu erzielende Ergebnis und beide wünschenswerten Ergebnisse.",
+                    false
+                ),
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt nicht das zu erzielende Ergebnis.",
+                    true
+                ),
+            )
+        ) ,
+        Question(
+            question = "Sie sind Administrator eines kleinen Sportartikelherstellers. Der Personalchef Ihrer Firma hat einige Dateien in einer Freigabe Personaldaten auf einem 2003-Server erstellt. Die Frei-gabe- und NTFS-Berechtigungen von Frei und Dokumente sind wie folgt:",
+            options = listOf(
+                Option(
+                    answer = "Geben Sie sich selbst Vollzugriff für den Ordner Personaldaten. Löschen Sie die Datei.Entfernen Sie die Vollzugriffs-Berechtigung auf den Ordner Personaldaten.",
+                    false
+                ),
+                Option(
+                    answer = "Ziehen Sie die Besitzrechte des Ordners Personaldaten an sich. Wenn die Nachfrage erscheint, übernehmen Sie auch die Besitzrechte an den vorhandenen Dateien. Geben Sie sich Vollzugriff für die Datei und löschen Sie sie.",
+                    false
+                ),
+                Option(
+                    answer = "Übernehmen Sie die Besitzrechte an der Datei. Geben Sie sich die Berechtigung Ändern für die Datei. Löschen Sie sie.",
+                    true
+                ),
+                Option(
+                    answer = "Geben Sie sich selbst die Berechtigung Ändern für den Ordner Personaldaten und seinen Inhalt. Löschen Sie die Datei. Entfernen Sie die Ändern-Berechtigung für den Ordner Personaldaten.",
+                    false
+                ),
+            )
+        ) ,
+        Question(
+            question = "Sie sind Administrator eines kleinen Netzwerks. Die Datenpartitionen Ihres Fileservers sind mit FAT32 formatiert. Der Chef der Lohnbuchhaltung will eine Freigabe einrichten, in der Benutzer ihre Arbeitszeitnachweise einsehen können.",
+            options = listOf(
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt das zu erzielende Ergebnis, aber keines der beiden wünschenswerten Ergebnisse.",
+                    false
+                ),
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt das zu erzielende Ergebnis und eines der beiden wünschenswerten Ergebnisse.",
+                    false
+                ),
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt das zu erzielende Ergebnis und beide wünschenswerten Ergebnisse.",
+                    true
+                ),
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt nicht das zu erzielende Ergebnis.",
+                    false
+                ),
+            )
+        )
+        ,
+        Question(
+            question = "Sie sind Administrator eines kleinen Netzwerks. Die Personalchefin ist extrem sicher-heitsbewusst. \n Erstellen Sie eine Freigabe namens PersonalAbgesichert.  ",
+            options = listOf(
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt das zu erzielende Ergebnis, aber keines der beiden wünschenswerten Ergebnisse.",
+                    false
+                ),
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt das zu erzielende Ergebnis und eines der beiden\n" +
+                            "wünschenswerten Ergebnisse.",
+                    false
+                ),
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt das zu erzielende Ergebnis und beide wünschenswerten Ergebnisse.",
+                    false
+                ),
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt nicht das zu erzielende Ergebnis.",
+                    false
+                ),
+            )
+        ),
+        Question(
+            question = "Sie sind Administrator eines kleinen Netzwerks. Die Personalchefin ist extrem sicher-heitsbewusst. \n Erstellen Sie eine Freigabe namens PersonalAbgesichert$.",
+            options = listOf(
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt das zu erzielende Ergebnis, aber keines der beiden wünschenswerten Ergebnisse.",
+                    false
+                ),
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt das zu erzielende Ergebnis und eines der beiden\n" +
+                            "wünschenswerten Ergebnisse.",
+                    false
+                ),
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt das zu erzielende Ergebnis und beide wünschenswerten Ergebnisse.",
+                    false
+                ),
+                Option(
+                    answer = "Die vorgeschlagene Lösung bewirkt nicht das zu erzielende Ergebnis.",
+                    false
                 ),
             )
         )
